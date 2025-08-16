@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: #222;
+    color:#eee;
+    font-family: system-ui, sans-serif;
+}
+.btn{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+ul{
+    /* border: 1px solid red; */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+li>a{
+    display: block;
+    /* border: 1px solid yellow; */
+    padding: .8rem 1rem;
+}
+#banner{
+    position: relative;
+    height: 400px;
+    background-color: #3335;
+}
+#slider{
+    margin: 0 auto;
+    width: 70%;
+    /* border: 1px solid #777; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+    scroll-snap-type:x mandatory;
+    scroll-behavior: smooth;
+}
+#slider::-webkit-scrollbar{
+    display: none;
+}
+.img{
+    scroll-snap-align: center;
+    flex:1 0 100%;
+    height: 100%;
+    width: 30%;
+    font-size: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #999; */
+    /* border: 1px solid #555; */
+}
+#slider-btns{
+    position: absolute;
+    left: 20%;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+    z-index: 1;
+}
+#slider-btns>a{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #777;
+}
+#books{
+    position: absolute;
+    top: 0;
+    left: 15%;
+    height: 100%;
+    display: flex;
+    background-color: aquas;
+    flex-direction: column;
+    justify-content: center;
+    background-image:linear-gradient(rgb(0, 255, 0), rgba(255, 230, 0, 0.829));
+}
+#book-title{
+    font-size: 180%;
+    color: hsl(240, 50%, 50%);
+}
+#book-author{
+    opacity: .5;
+}
+#book-rating{
+    font-size: 80%;
+    margin-top: .7rem;
+}
