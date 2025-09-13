@@ -65,12 +65,11 @@ document.querySelector('button.close').addEventListener('click', (e) => {
 //     confetti.style.left = e.offsetX + 'px';
 // })
 const books = [
-    {title:"ONE OF YOU IS A DEVIL", author:"Dag Heward-Mills", rating:"4.5", downloads:44444},
-    {title:"DIARY of a Wimpy Kid", author:"Jeff Kinney", rating:"4.5", downloads:44444},
-    {title:"GOZZLE", author:"Julia Donaldson Sara Ogilive", rating:"4.5", downloads:44444},
-    {title:"GOZZLE", author:"Julia Donaldson Sara Ogilive", rating:"4.5", downloads:44444},
-    {title:"THE GREATSET STUFF ON EARTH", author:"Steve Tomecek", rating:"4.5", downloads:44444},
-    {title:"THE POISENED KING", author:"Katherine Rundell", rating:"4.5", downloads:44444},
+    {title:"ONE OF YOU IS A DEVIL", author:"Dag Heward-Mills", rating:4.5, downloads:44444},
+    {title:"DIARY of a Wimpy Kid", author:"Jeff Kinney", rating:3.5, downloads:44444},
+    {title:"GOZZLE", author:"Julia Donaldson Sara Ogilive", rating:2.5, downloads:44444}, 
+    {title:"THE GREATSET STUFF ON EARTH", author:"Steve Tomecek", rating:1.5, downloads:44444},
+    {title:"THE POISENED KING", author:"Katherine Rundell", rating:1, downloads:44444},
 ];
 document.querySelectorAll('#slider-btns>a').forEach((lnk, index) => {
     lnk.addEventListener('click', () => {
@@ -79,4 +78,14 @@ document.querySelectorAll('#slider-btns>a').forEach((lnk, index) => {
         document.querySelector('#book-rating>span:nth-child(2)').innerText = books[index].rating
         // console.log(books[index].title)
     })
+})
+
+let counter = 0
+document.querySelector('.svg.chevron.right').addEventListener('click', () => {
+    if(counter === books.length) return;
+    document.querySelector('section:nth-child(2)>div:nth-child(1)').innerText = books[counter].title;
+    document.querySelector('section:nth-child(2)>div:nth-child(2)').innerText = books[counter].author;
+    document.querySelector('section:nth-child(2)>div:nth-child(3)').style.setProperty('--color-rating', books[counter].rating/5*100 + '%')
+    counter++;
+    // console.log(counter);
 })

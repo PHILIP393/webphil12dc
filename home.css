@@ -233,9 +233,10 @@ section:nth-child(2)>div:nth-child(2){
     opacity: .5;
 }
 section:nth-child(2)>div:nth-child(3){
+    --color-rating:90%;
     width: fit-content;
     padding: 1rem 0 0;
-    background-image:linear-gradient(to right,goldenrod 90%,#444 0);
+    background-image:linear-gradient(to right,goldenrod var(--color-rating),#444 0);
     -webkit-text-fill-color:transparent;
     background-clip:text;
 }
