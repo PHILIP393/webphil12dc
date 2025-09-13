@@ -50,9 +50,33 @@ document.querySelectorAll('.img').forEach(img => {
 document.querySelector('button.close').addEventListener('click', (e) => {
     document.querySelector('aside').classList.remove('view');
 })
+// const integers = [30, 99, [35, "stew"]]
+// const philip = {
+//     "num5":20.5,
+//     "num2":34.4
+// }
+// philip["float3"] = 17.8
+// delete philip["num5"]
+// console.log(philip)
 
-const confetti = document.querySelector('.confetti');
-window.addEventListener('mousemove', (e) => {
-    confetti.style.top = e.offsetY + 'px';
-    confetti.style.left = e.offsetX + 'px';
+// const confetti = document.querySelector('.confetti');
+// window.addEventListener('mousemove', (e) => {
+//     confetti.style.top = e.offsetY + 'px';
+//     confetti.style.left = e.offsetX + 'px';
+// })
+const books = [
+    {title:"ONE OF YOU IS A DEVIL", author:"Dag Heward-Mills", rating:"4.5", downloads:44444},
+    {title:"DIARY of a Wimpy Kid", author:"Jeff Kinney", rating:"4.5", downloads:44444},
+    {title:"GOZZLE", author:"Julia Donaldson Sara Ogilive", rating:"4.5", downloads:44444},
+    {title:"GOZZLE", author:"Julia Donaldson Sara Ogilive", rating:"4.5", downloads:44444},
+    {title:"THE GREATSET STUFF ON EARTH", author:"Steve Tomecek", rating:"4.5", downloads:44444},
+    {title:"THE POISENED KING", author:"Katherine Rundell", rating:"4.5", downloads:44444},
+];
+document.querySelectorAll('#slider-btns>a').forEach((lnk, index) => {
+    lnk.addEventListener('click', () => {
+        document.getElementById('book-title').innerText = books[index].title
+        document.getElementById('book-author').innerText = books[index].author
+        document.querySelector('#book-rating>span:nth-child(2)').innerText = books[index].rating
+        // console.log(books[index].title)
+    })
 })
